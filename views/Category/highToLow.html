@@ -1,0 +1,36 @@
+{% extends "_global/index.html" %} {% block main %}
+<div class="row border-bottom">
+    <h1 class="col-12">{{category.name|escape}}</h1>
+
+    <div class=" col-sm-12 col-md-8 col-lg-9">number of items: {{productsInCategory|length}} </div>
+    <div class="col-sm-12 col-md-4 col-lg-3 float-right">
+        Sort by price
+        <a class="p-0 m-2" href={{BASE}}category/{{category.category_id}}/order-by-price-low-to-high/>
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </i>
+        </a>
+        <a class="p-0 m-2" href={{BASE}}category/{{category.category_id}}/order-by-price-high-to-low/>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </i>
+        </a>
+
+    </div>
+
+
+</div>
+<ul>
+    {% for product in productsInCategory %}
+    <li>
+        <a href={{BASE}}product/{{product.product_id}}> {{product.title|escape}}</a>
+        <br>
+
+
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %} {% block title %}{{category.name}}{% endblock %}

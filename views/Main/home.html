@@ -1,0 +1,43 @@
+{% extends "_global/index.html" %} 
+{% block main %} 
+{% spaceless %}
+<div class="row ">
+   
+        
+        {% for category in categories %}
+        
+
+        <div class="p-0 mb-1 card border-primary mb-2 col-12 col-sm-6 col-md-4 col-lg-3 text-center categories" >
+                <img class="card-img-top cardImage" src="{{category.image_path}}" alt="Card image cap">
+              
+               <div class="card-body">
+                <div class="card-title">
+                        <a class="nav-link" href="{{BASE}}category/{{category.category_id}}">
+                            {{category.name|escape}}
+                        </a>
+                    </div>
+                </div>
+                </div>
+            
+                {% endfor %}
+           
+              </div>
+
+
+
+
+
+   <!--    <ul class="nav nav-tabs">
+        {% for category in categories %}
+
+     <li class="nav-item">
+            <a class="nav-link" href="{{BASE}}category/{{category.category_id}}">
+                {{category.name|escape}}
+            </a>
+        </li> 
+        {% endfor %}
+    </ul>
+-->
+
+</div>
+{% endspaceless %} {% endblock %}

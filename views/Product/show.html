@@ -1,0 +1,20 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<ul>
+ 
+    <li>
+        <h1> {{product.title|escape}}</h1>
+        {{product.description|escape}}
+        <br>
+        {{product.price|escape}}
+        
+    </li>
+
+
+</ul>
+{% endblock %}
+
+
+{% block title %}{{product.title}}{% endblock %}
